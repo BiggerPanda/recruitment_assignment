@@ -83,6 +83,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &792042508934481813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7959677317800043933}
+  m_Layer: 0
+  m_Name: Middle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7959677317800043933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792042508934481813}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8544753383868359478}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1095736137176863967
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +577,7 @@ Transform:
   - {fileID: 765663604624736076}
   - {fileID: 5701135692944453132}
   - {fileID: 7774917712592795027}
+  - {fileID: 7959677317800043933}
   m_Father: {fileID: 3563396728454671587}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -580,13 +612,13 @@ ArticulationBody:
     target: 0
     targetVelocity: 0
   m_YDrive:
-    lowerLimit: -2.2090952
+    lowerLimit: 0
     upperLimit: 6.535405
     stiffness: 10
-    damping: 10
+    damping: 1500
     forceLimit: 34335
-    target: 0
-    targetVelocity: 0
+    target: 0.2
+    targetVelocity: 0.2
   m_ZDrive:
     lowerLimit: 0
     upperLimit: 0
@@ -1114,8 +1146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0eb60de58793f54eb486afb63bda82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ArticulationBody: {fileID: 5583661859415773108}
-  m_Thrust: 100
+  connectedForkBody: {fileID: 5583661859415773108}
+  maxWeight: 4000
+  middleOfFork: {fileID: 7959677317800043933}
 --- !u!171741748 &766690187883786891
 ArticulationBody:
   m_ObjectHideFlags: 0
