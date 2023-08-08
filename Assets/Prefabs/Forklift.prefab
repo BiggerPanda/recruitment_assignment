@@ -1184,7 +1184,7 @@ MonoBehaviour:
   rearTread: 0.97
   frontTread: 1
   turnRadius: 2.5
-  maxForwardForce: 4500
+  maxForwardForce: 12000
   isFrontWheelDrive: 1
   frontWheels:
   - {fileID: 2138356837294768738}
