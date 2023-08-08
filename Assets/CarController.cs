@@ -23,13 +23,16 @@ public class CarController : MonoBehaviour
     [SerializeField] private bool isFrontWheelDrive = true;
     [FormerlySerializedAs("forntWheels")] [SerializeField] private Wheel[] frontWheels;
     [SerializeField] private Wheel[] rearWheels;
-    [SerializeField] private GameObject[] frontWheelMeshes;
-    [SerializeField] private GameObject[] rearWheelMeshes;
+    [SerializeField] private GameObject steeringWheelGameObject;
 
     [SerializeField] private float inputSteer = 0f; // temporary input
+    [SerializeField] private float maxAngleOfSteeringWheel = 540f;
+    [SerializeField] private float steerTimeOfSteeringWheel = 8f;
 
+    
     private float ackermannAngleLeft = 0f;
     private float ackermannAngleRight = 0f;
+    private float steerWheelAngle = 0f;
 
     // Update is called once per frame
     void Update()
@@ -103,6 +106,10 @@ public class CarController : MonoBehaviour
                 _wheel.ApplyAckermannAngle(ackermannAngleLeft, ackermannAngleRight);
             }
         }
+        
+        // Apply steering wheel rotation
+        steerWheelAngle = Mathf.Lerp(steerWheelAngle, maxAngleOfSteeringWheel * inputSteer, Time.deltaTime * steerTimeOfSteeringWheel);
+        steeringWheelGameObject.transform.localRotation = Quaternion.Euler(0f, 0f, steerWheelAngle);
     }
     
     private void applyForwardForce()

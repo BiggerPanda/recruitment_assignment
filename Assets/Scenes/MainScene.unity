@@ -206,16 +206,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8874b8a0759feb14a8e47dc89ae9eb5a, type: 2}
-    - target: {fileID: 2456191041122958292, guid: a4db35aee5557ea4795ccca09a1bedc6,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2456191041122958292, guid: a4db35aee5557ea4795ccca09a1bedc6,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4db35aee5557ea4795ccca09a1bedc6, type: 3}
 --- !u!1 &330585543
@@ -836,8 +826,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 144523686590551969, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
+      propertyPath: steerTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 144523686590551969, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
       propertyPath: wheelRadius
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 144523686590551969, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
@@ -847,22 +842,42 @@ PrefabInstance:
     - target: {fileID: 144523686590551969, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: springTravel
-      value: 0.2
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 144523686590551969, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: springDamping
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 165276131563820925, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: steerTime
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 165276131563820925, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: wheelRadius
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 165276131563820925, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: springTravel
-      value: 0.2
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 165276131563820925, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: springDamping
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 394567452953830180, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: steerTime
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 394567452953830180, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: wheelRadius
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 394567452953830180, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
@@ -872,12 +887,32 @@ PrefabInstance:
     - target: {fileID: 394567452953830180, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: springTravel
-      value: 0.2
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 394567452953830180, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: springDamping
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 678952873293847009, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 766690187883786891, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_Mass
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138356837294768738, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: steerTime
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2138356837294768738, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: wheelRadius
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2138356837294768738, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
@@ -887,7 +922,52 @@ PrefabInstance:
     - target: {fileID: 2138356837294768738, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: springTravel
-      value: 0.2
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138356837294768738, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: springDamping
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563396728454671587, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563396728454671587, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719094903327212595, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583661859415773108, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_ParentAnchorPosition.x
+      value: 0.046074167
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583661859415773108, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_ParentAnchorPosition.y
+      value: 3.936147
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583661859415773108, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_ParentAnchorPosition.z
+      value: 4.139477
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267445567428488971, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.237326
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267445567428488971, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8323354036767388677, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
@@ -902,7 +982,7 @@ PrefabInstance:
     - target: {fileID: 8323354036767388677, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8323354036767388677, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}

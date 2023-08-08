@@ -33,20 +33,24 @@ public class Wheel : MonoBehaviour
     private float springLength = 0f;
     private float springForce = 0f;
     private float damperForce = 0f;
-    private float fowardForce = 0f;
+    private float forwardForce = 0f;
     private float sidewaysForce = 0f;
+    private float wheelCircumference=0f;
 
     private ArticulationBody mainBody;
-
+    private GameObject wheelMesh;
+    
     private Vector3 springForceVector = Vector3.zero;
     private Vector3 wheelVelocity = Vector3.zero;
 
     private void Start()
     {
         mainBody = transform.root.root.GetComponent<ArticulationBody>();
+        wheelMesh = transform.GetChild(0).gameObject;
 
         minLength = restDistance - springTravel;
         maxLength = restDistance + springTravel;
+        wheelCircumference = 2 * Mathf.PI * wheelRadius;
     }
 
     private void Update()
@@ -75,8 +79,10 @@ public class Wheel : MonoBehaviour
             wheelVelocity = transform.InverseTransformDirection(mainBody.GetPointVelocity(hit.point));
             
             
-            mainBody.AddForceAtPosition(springForceVector + (fowardForce * transform.forward) + (sidewaysForce*-transform.right), hit.point);
+            mainBody.AddForceAtPosition(springForceVector + (forwardForce * transform.forward) + (sidewaysForce*-transform.right), hit.point);
         }
+        
+        applySpeedRotation();
     }
 
     public void ApplyAckermannAngle(float _ackermannAngleLeft, float _ackermannAngleRight)
@@ -93,7 +99,19 @@ public class Wheel : MonoBehaviour
     
     public void ApplyForce(float _force)
     {
-        fowardForce = Input.GetAxis("Vertical") * _force ;
+        forwardForce = Input.GetAxis("Vertical") * _force ;
         sidewaysForce = wheelVelocity.x * _force;
+    }
+
+    private void applySpeedRotation()
+    {
+        if (Input.GetAxis("Vertical") > 0)
+        {
+            wheelMesh.transform.Rotate(mainBody.velocity.magnitude / wheelRadius, 0f, 0f);
+        }
+        else
+        {
+            wheelMesh.transform.Rotate(-mainBody.velocity.magnitude / wheelRadius, 0f, 0f);
+        }
     }
 }
