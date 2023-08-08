@@ -894,6 +894,11 @@ PrefabInstance:
       propertyPath: springDamping
       value: 60000
       objectReference: {fileID: 0}
+    - target: {fileID: 678952873293847009, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 766690187883786891, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: m_Mass
