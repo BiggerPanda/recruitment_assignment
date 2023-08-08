@@ -32,7 +32,7 @@ public class ForkliftController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Jump"))
+        if (InputController.Instance.MoveForkliftUp())
         {
             if(Physics.Raycast(middleOfFork.position,Vector3.up,out RaycastHit hit, 1f))
             { 
@@ -49,7 +49,7 @@ public class ForkliftController : MonoBehaviour
             applyForce = maxForce;
         }
 
-        if (Input.GetButton("Fire1"))
+        if (InputController.Instance.MoveForkliftDown())
         {
             applyForce = -maxForce;
             if (item != null)

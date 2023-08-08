@@ -1160,7 +1160,7 @@ ArticulationBody:
   m_GameObject: {fileID: 8323354036767388678}
   m_Enabled: 1
   serializedVersion: 3
-  m_Mass: 4000
+  m_Mass: 6000
   m_ParentAnchorPosition: {x: 0, y: 0, z: 0}
   m_ParentAnchorRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
@@ -1197,8 +1197,8 @@ ArticulationBody:
     forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
-  m_LinearDamping: 2
-  m_AngularDamping: 0.7
+  m_LinearDamping: 2.5
+  m_AngularDamping: 1
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 1
