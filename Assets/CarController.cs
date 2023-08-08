@@ -23,8 +23,6 @@ public class CarController : MonoBehaviour
     [SerializeField] private bool isFrontWheelDrive = true;
     [FormerlySerializedAs("forntWheels")] [SerializeField] private Wheel[] frontWheels;
     [SerializeField] private Wheel[] rearWheels;
-    [SerializeField] private GameObject[] frontWheelMeshes;
-    [SerializeField] private GameObject[] rearWheelMeshes;
     [SerializeField] private GameObject steeringWheelGameObject;
 
     [SerializeField] private float inputSteer = 0f; // temporary input
@@ -131,23 +129,4 @@ public class CarController : MonoBehaviour
             }
         }
     }
-
-    private void applyRotationBasedOnSpeed()
-    {
-        if (isFrontWheelDrive)
-        {
-            foreach (GameObject _wheel in frontWheelMeshes)
-            {
-                
-            }
-        }
-        else
-        {
-            foreach (GameObject _wheel in rearWheelMeshes)
-            {
-
-            }
-        }
-    }
-    
 }
