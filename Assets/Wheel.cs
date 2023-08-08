@@ -99,13 +99,13 @@ public class Wheel : MonoBehaviour
     
     public void ApplyForce(float _force)
     {
-        forwardForce = Input.GetAxis("Vertical") * _force ;
+        forwardForce = InputController.Instance.GetMoveVector().y * _force ;
         sidewaysForce = wheelVelocity.x * _force;
     }
 
     private void applySpeedRotation()
     {
-        if (Input.GetAxis("Vertical") > 0)
+        if (InputController.Instance.GetMoveVector().y > 0)
         {
             wheelMesh.transform.Rotate(mainBody.velocity.magnitude / wheelRadius, 0f, 0f);
         }

@@ -25,7 +25,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private Wheel[] rearWheels;
     [SerializeField] private GameObject steeringWheelGameObject;
 
-    [SerializeField] private float inputSteer = 0f; // temporary input
+    [SerializeField] private float inputSteer = 0f;
     [SerializeField] private float maxAngleOfSteeringWheel = 540f;
     [SerializeField] private float steerTimeOfSteeringWheel = 8f;
 
@@ -37,7 +37,7 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        inputSteer = Input.GetAxis("Horizontal"); // temp
+        inputSteer = InputController.Instance.GetMoveVector().x; 
 
         // Calculate Ackermann angles
         if (inputSteer > 0)
