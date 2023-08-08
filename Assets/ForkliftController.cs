@@ -44,7 +44,6 @@ public class ForkliftController : MonoBehaviour
                 item = hit.transform;
                 itemRigidbody = item.GetComponent<Rigidbody>();
                 item.SetParent(middleOfFork);
-
             }
             
             applyForce = maxForce;
@@ -54,7 +53,6 @@ public class ForkliftController : MonoBehaviour
         {
             if (item != null)
             {
-
                 item.SetParent(null);
                 item = null;
                 itemRigidbody = null;

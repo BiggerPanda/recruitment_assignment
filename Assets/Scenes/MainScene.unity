@@ -587,64 +587,6 @@ Transform:
   m_Father: {fileID: 1755705109}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -25, y: 0, z: 0}
---- !u!1 &1157113422 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 731801658567534323, guid: a4db35aee5557ea4795ccca09a1bedc6,
-    type: 3}
-  m_PrefabInstance: {fileID: 201495328}
-  m_PrefabAsset: {fileID: 0}
---- !u!171741748 &1157113428
-ArticulationBody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157113422}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Mass: 45000
-  m_ParentAnchorPosition: {x: 0, y: 0, z: 0}
-  m_ParentAnchorRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_AnchorPosition: {x: 0, y: 0, z: 0}
-  m_AnchorRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_MatchAnchors: 1
-  m_ArticulationJointType: 0
-  m_LinearX: 2
-  m_LinearY: 2
-  m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
-  m_Twist: 2
-  m_XDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 0
-    forceLimit: 3.4028235e+38
-    target: 0
-    targetVelocity: 0
-  m_YDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 0
-    forceLimit: 3.4028235e+38
-    target: 0
-    targetVelocity: 0
-  m_ZDrive:
-    lowerLimit: 0
-    upperLimit: 0
-    stiffness: 0
-    damping: 0
-    forceLimit: 3.4028235e+38
-    target: 0
-    targetVelocity: 0
-  m_LinearDamping: 0.05
-  m_AngularDamping: 0.05
-  m_JointFriction: 0.05
-  m_Immovable: 0
-  m_UseGravity: 1
-  m_CollisionDetectionMode: 0
 --- !u!1 &1755705108
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,8 +826,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 144523686590551969, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
+      propertyPath: steerTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 144523686590551969, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
       propertyPath: wheelRadius
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 144523686590551969, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
@@ -895,22 +842,42 @@ PrefabInstance:
     - target: {fileID: 144523686590551969, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: springTravel
-      value: 0.2
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 144523686590551969, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: springDamping
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 165276131563820925, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: steerTime
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 165276131563820925, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: wheelRadius
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 165276131563820925, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: springTravel
-      value: 0.2
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 165276131563820925, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: springDamping
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 394567452953830180, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: steerTime
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 394567452953830180, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: wheelRadius
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 394567452953830180, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
@@ -920,12 +887,27 @@ PrefabInstance:
     - target: {fileID: 394567452953830180, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: springTravel
-      value: 0.2
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 394567452953830180, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: springDamping
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 766690187883786891, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_Mass
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138356837294768738, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: steerTime
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2138356837294768738, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: wheelRadius
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2138356837294768738, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
@@ -935,7 +917,47 @@ PrefabInstance:
     - target: {fileID: 2138356837294768738, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: springTravel
-      value: 0.2
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138356837294768738, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: springDamping
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563396728454671587, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563396728454671587, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583661859415773108, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_ParentAnchorPosition.x
+      value: 0.046074167
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583661859415773108, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_ParentAnchorPosition.y
+      value: 3.936147
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583661859415773108, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_ParentAnchorPosition.z
+      value: 4.139477
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267445567428488971, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.237326
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267445567428488971, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8323354036767388677, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
@@ -950,7 +972,7 @@ PrefabInstance:
     - target: {fileID: 8323354036767388677, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8323354036767388677, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
