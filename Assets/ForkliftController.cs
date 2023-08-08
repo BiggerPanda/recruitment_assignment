@@ -51,14 +51,13 @@ public class ForkliftController : MonoBehaviour
 
         if (Input.GetButton("Fire1"))
         {
+            applyForce = -maxForce;
             if (item != null)
             {
                 item.SetParent(null);
                 item = null;
                 itemRigidbody = null;
             }
-            
-            applyForce = -maxForce;
         }
     }
 

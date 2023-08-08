@@ -1227,15 +1227,10 @@ MonoBehaviour:
   rearWheels:
   - {fileID: 394567452953830180}
   - {fileID: 144523686590551969}
-  frontWheelMeshes:
-  - {fileID: 2711930526247060015}
-  - {fileID: 3020342085340593061}
-  rearWheelMeshes:
-  - {fileID: 4254977947884582642}
-  - {fileID: 1550428879982453382}
   steeringWheelGameObject: {fileID: 169965784428059880}
   inputSteer: 0
   maxAngleOfSteeringWheel: 540
+  steerTimeOfSteeringWheel: 6
 --- !u!1 &8888526388649580317
 GameObject:
   m_ObjectHideFlags: 0
