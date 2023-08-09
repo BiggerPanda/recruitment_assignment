@@ -108,7 +108,7 @@ public class CarController : MonoBehaviour
         }
         
         // Apply steering wheel rotation
-        steerWheelAngle = Mathf.Lerp(steerWheelAngle, maxAngleOfSteeringWheel * inputSteer, Time.deltaTime * steerTimeOfSteeringWheel);
+        steerWheelAngle = Mathf.Lerp(steerWheelAngle, maxAngleOfSteeringWheel * -inputSteer, Time.deltaTime * steerTimeOfSteeringWheel);
         steeringWheelGameObject.transform.localRotation = Quaternion.Euler(0f, 0f, steerWheelAngle);
     }
     
