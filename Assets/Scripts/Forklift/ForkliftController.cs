@@ -60,7 +60,7 @@ public class ForkliftController : MonoBehaviour
         }
 
         if (InputController.Instance.MoveForkliftDown())
-        {   Debug.Log("Down" + Physics.Raycast(middleOfFork.position, Vector3.down, out RaycastHit h, objectBelowDetectionRayLength));
+        {
             if (Physics.Raycast(middleOfFork.position, Vector3.down, out RaycastHit hit, objectBelowDetectionRayLength))
             {
                 if (item != null)

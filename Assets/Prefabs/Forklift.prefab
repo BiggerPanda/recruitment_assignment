@@ -1600,10 +1600,10 @@ MonoBehaviour:
   maxWeight: 4000
   middleOfFork: {fileID: 7959677317800043933}
   maxYPosition: 6.5
-  minYPosition: 0
+  minYPosition: 0.15
   forkMoveAccuracy: 1
   objectUpDetectionRayLength: 1
-  objectBelowDetectionRayLength: 0.3
+  objectBelowDetectionRayLength: 0.15
 --- !u!171741748 &766690187883786891
 ArticulationBody:
   m_ObjectHideFlags: 0
