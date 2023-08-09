@@ -14,15 +14,12 @@ public class ForkliftController : MonoBehaviour
     private float applyForce = 0f;
     
     private float massOfItem = 0f;
-    private MassController massController;
     private ArticulationDrive yDrive;
     private Transform item;
     private Rigidbody itemRigidbody;
 
     private void Start()
     {
-        massController = connectedForkBody.GetComponent<MassController>();
-        
         yDrive = connectedForkBody.yDrive;
         maxForce = maxWeight * -Physics.gravity.y;
         yDrive.forceLimit = maxForce;
