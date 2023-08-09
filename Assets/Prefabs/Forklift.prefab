@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 330585547}
   - component: {fileID: 3083349327642228312}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: 3rdPerson
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,15 +26,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.23392956, y: -3.4541385e-15, z: -5.709365e-17, w: 0.97225356}
-  m_LocalPosition: {x: 0, y: 15, z: -15}
+  m_LocalRotation: {x: 0.3840118, y: -0.00047787174, z: 0.00019874668, w: 0.9233281}
+  m_LocalPosition: {x: 0.01543756, y: 15.00003, z: -14.91397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8457794054548403538}
   m_Father: {fileID: 6452379051615383143}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!20 &330585545
 Camera:
   m_ObjectHideFlags: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 15, z: -15}
+  m_FollowOffset: {x: 0, y: 0, z: 0.06}
   m_XDamping: 2
   m_YDamping: 2
   m_ZDamping: 2
@@ -475,15 +475,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609618866812940336}
-  m_LocalRotation: {x: 0.23392956, y: -3.4541385e-15, z: -5.709365e-17, w: 0.97225356}
-  m_LocalPosition: {x: 0, y: 15, z: -15}
+  m_LocalRotation: {x: 0.11363672, y: -0, z: -0, w: 0.9935224}
+  m_LocalPosition: {x: 0, y: 0, z: 0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9086825248121679411}
   m_Father: {fileID: 6452379051615383143}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 13.05, y: 0, z: 0}
 --- !u!20 &6972971605581902819
 Camera:
   m_ObjectHideFlags: 0
@@ -509,7 +509,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 65
+  field of view: 100
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -581,7 +581,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 8323354036767388677}
   m_Follow: {fileID: 8323354036767388677}
   m_Lens:
-    FieldOfView: 65
+    FieldOfView: 80
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -647,7 +647,7 @@ MonoBehaviour:
   springTravel: 0.4
   springStiffness: 120000
   springDamping: 60000
-  wheelRadius: 1.2
+  wheelRadius: 1.1
   isLeftWheel: 1
   steerTime: 6
 --- !u!1 &2711930526247060015
@@ -782,7 +782,7 @@ MonoBehaviour:
   springTravel: 0.4
   springStiffness: 120000
   springDamping: 60000
-  wheelRadius: 1.2
+  wheelRadius: 1.1
   isLeftWheel: 0
   steerTime: 6
 --- !u!1 &3020342085340593061
@@ -879,6 +879,7 @@ GameObject:
   - component: {fileID: 8457794054548403538}
   - component: {fileID: 3908260689270903921}
   - component: {fileID: 3242326429784359005}
+  - component: {fileID: 477869421}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -935,6 +936,18 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
+--- !u!114 &477869421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3657769742688393847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3709038878122095102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,7 +1510,7 @@ MonoBehaviour:
   springTravel: 0.4
   springStiffness: 120000
   springDamping: 60000
-  wheelRadius: 1.2
+  wheelRadius: 1.1
   isLeftWheel: 0
   steerTime: 6
 --- !u!1 &8323354036534750772
@@ -1586,6 +1599,11 @@ MonoBehaviour:
   connectedForkBody: {fileID: 5583661859415773108}
   maxWeight: 4000
   middleOfFork: {fileID: 7959677317800043933}
+  maxYPosition: 6.5
+  minYPosition: 0
+  forkMoveAccuracy: 1
+  objectUpDetectionRayLength: 1
+  objectBelowDetectionRayLength: 0.3
 --- !u!171741748 &766690187883786891
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -1806,7 +1824,7 @@ MonoBehaviour:
   springTravel: 0.4
   springStiffness: 120000
   springDamping: 60000
-  wheelRadius: 1.2
+  wheelRadius: 1.1
   isLeftWheel: 1
   steerTime: 6
 --- !u!1 &9108355191310071562
