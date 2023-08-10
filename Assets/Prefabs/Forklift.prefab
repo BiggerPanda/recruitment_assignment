@@ -1600,7 +1600,7 @@ MonoBehaviour:
   maxWeight: 4000
   middleOfFork: {fileID: 7959677317800043933}
   maxYPosition: 6.5
-  minYPosition: 0.15
+  minYPosition: -0.15
   forkMoveAccuracy: 1
   objectUpDetectionRayLength: 1
   objectBelowDetectionRayLength: 0.15
@@ -1681,7 +1681,6 @@ MonoBehaviour:
   - {fileID: 394567452953830180}
   - {fileID: 144523686590551969}
   steeringWheelGameObject: {fileID: 169965784428059880}
-  inputSteer: 0
   maxAngleOfSteeringWheel: 540
   steerTimeOfSteeringWheel: 6
 --- !u!81 &1893730010146403853

@@ -46,6 +46,11 @@ public class CarController : MonoBehaviour
     {
         forkliftUIController = _forkliftUIController;
     }
+    
+    private void Awake()
+    {
+        mainBody = GetComponent<ArticulationBody>();
+    }
 
     // Update is called once per frame
     void Update()
