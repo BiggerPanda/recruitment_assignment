@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Zenject;
 
 public class CarController : MonoBehaviour
 {
@@ -21,23 +22,36 @@ public class CarController : MonoBehaviour
 
     [SerializeField] private float maxForwardForce = 500f;
     [SerializeField] private bool isFrontWheelDrive = true;
-    [FormerlySerializedAs("forntWheels")] [SerializeField] private Wheel[] frontWheels;
+
+    [FormerlySerializedAs("forntWheels")] [SerializeField]
+    private Wheel[] frontWheels;
+
     [SerializeField] private Wheel[] rearWheels;
     [SerializeField] private GameObject steeringWheelGameObject;
 
-    [SerializeField] private float inputSteer = 0f;
     [SerializeField] private float maxAngleOfSteeringWheel = 540f;
     [SerializeField] private float steerTimeOfSteeringWheel = 8f;
 
-    
     private float ackermannAngleLeft = 0f;
     private float ackermannAngleRight = 0f;
     private float steerWheelAngle = 0f;
+    private float inputSteer = 0f;
+    private float inputDrive = 0f;
+
+    private ForkliftUIController forkliftUIController;
+    private ArticulationBody mainBody;
+
+    [Inject]
+    private void Init(ForkliftUIController _forkliftUIController)
+    {
+        forkliftUIController = _forkliftUIController;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        inputSteer = InputController.Instance.GetMoveVector().x; 
+        inputSteer = InputController.Instance.GetMoveVector().x;
+        inputDrive = InputController.Instance.GetMoveVector().y;
 
         // Calculate Ackermann angles
         if (inputSteer > 0)
@@ -56,6 +70,9 @@ public class CarController : MonoBehaviour
 
         // Apply Ackermann angles
         applyAckermannAngles();
+
+        forkliftUIController.UpdateInput(inputSteer, inputDrive);
+        forkliftUIController.UpdateSpeed(mainBody.velocity.magnitude);
     }
 
     private void FixedUpdate()
@@ -68,7 +85,7 @@ public class CarController : MonoBehaviour
         if (_inputSteer < 0)
         {
             ackermannAngleLeft = Mathf.Rad2Deg *
-                                 Mathf.Atan(wheelBase / 
+                                 Mathf.Atan(wheelBase /
                                             (_turnRadius - (isFrontWheelDrive ? rearTread : frontTread / 2))) *
                                  inputSteer;
             ackermannAngleRight = Mathf.Rad2Deg *
@@ -79,7 +96,7 @@ public class CarController : MonoBehaviour
         else if (_inputSteer > 0)
         {
             ackermannAngleLeft = Mathf.Rad2Deg *
-                                 Mathf.Atan(wheelBase / 
+                                 Mathf.Atan(wheelBase /
                                             (_turnRadius + (isFrontWheelDrive ? rearTread : frontTread / 2))) *
                                  inputSteer;
             ackermannAngleRight = Mathf.Rad2Deg *
@@ -106,12 +123,13 @@ public class CarController : MonoBehaviour
                 _wheel.ApplyAckermannAngle(ackermannAngleLeft, ackermannAngleRight);
             }
         }
-        
+
         // Apply steering wheel rotation
-        steerWheelAngle = Mathf.Lerp(steerWheelAngle, maxAngleOfSteeringWheel * -inputSteer, Time.deltaTime * steerTimeOfSteeringWheel);
+        steerWheelAngle = Mathf.Lerp(steerWheelAngle, maxAngleOfSteeringWheel * -inputSteer,
+            Time.deltaTime * steerTimeOfSteeringWheel);
         steeringWheelGameObject.transform.localRotation = Quaternion.Euler(0f, 0f, steerWheelAngle);
     }
-    
+
     private void applyForwardForce()
     {
         if (isFrontWheelDrive)
