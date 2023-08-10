@@ -26,11 +26,11 @@ public class InputController : MonoBehaviour
     
     public bool MoveForkliftUp()
     {
-        return inputMap.ForkliftAction.Up.triggered;
+        return inputMap.ForkliftAction.Up.IsPressed();
     }
     
     public bool MoveForkliftDown()
     {
-        return inputMap.ForkliftAction.Down.triggered;
+        return inputMap.ForkliftAction.Down.IsPressed();
     }
 }
