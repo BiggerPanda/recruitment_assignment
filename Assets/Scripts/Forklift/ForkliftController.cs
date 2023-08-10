@@ -80,6 +80,7 @@ public class ForkliftController : MonoBehaviour
                     item.SetParent(null);
                     item = null;
                     itemRigidbody = null;
+                    isObjectOnFork = false;
                 }
             }
 
