@@ -35,13 +35,15 @@ public class Wheel : MonoBehaviour
     private float damperForce = 0f;
     private float forwardForce = 0f;
     private float sidewaysForce = 0f;
-    private float wheelCircumference=0f;
+    private float wheelCircumference = 0f;
+    private float wheelRPMAngle = 0f;
 
     private ArticulationBody mainBody;
     private GameObject wheelMesh;
-    
+
     private Vector3 springForceVector = Vector3.zero;
     private Vector3 wheelVelocity = Vector3.zero;
+    private float acceleration = 2f;
 
     private void Start()
     {
@@ -57,8 +59,8 @@ public class Wheel : MonoBehaviour
     {
         wheelAngle = Mathf.Lerp(wheelAngle, steerAngle, Time.deltaTime * steerTime);
         transform.localRotation = Quaternion.Euler(transform.localRotation.x,
-                                                 transform.localRotation.y + wheelAngle,
-                                                   transform.localRotation.z);
+            transform.localRotation.y + wheelAngle,
+            transform.localRotation.z);
     }
 
     private void FixedUpdate()
@@ -77,11 +79,12 @@ public class Wheel : MonoBehaviour
             springForceVector = transform.up * (springForce + damperForce);
 
             wheelVelocity = transform.InverseTransformDirection(mainBody.GetPointVelocity(hit.point));
-            
-            
-            mainBody.AddForceAtPosition(springForceVector + (forwardForce * transform.forward) + (sidewaysForce*-transform.right), hit.point);
+
+
+            mainBody.AddForceAtPosition(
+                springForceVector + (forwardForce * transform.forward) + (sidewaysForce * -transform.right), hit.point);
         }
-        
+
         applySpeedRotation();
     }
 
@@ -96,22 +99,26 @@ public class Wheel : MonoBehaviour
             steerAngle = _ackermannAngleRight;
         }
     }
-    
+
     public void ApplyForce(float _force)
     {
-        forwardForce = InputController.Instance.GetMoveVector().y * _force ;
+        forwardForce = InputController.Instance.GetMoveVector().y * _force;
         sidewaysForce = wheelVelocity.x * _force;
     }
 
     private void applySpeedRotation()
     {
-        if (InputController.Instance.GetMoveVector().y > 0)
+        if (InputController.Instance.GetMoveVector().y >= 0)
         {
-            wheelMesh.transform.Rotate(mainBody.velocity.magnitude / wheelRadius, 0f, 0f);
+            wheelRPMAngle = Mathf.Lerp(wheelRPMAngle, mainBody.velocity.magnitude / wheelRadius,
+                Time.deltaTime * acceleration);
+            wheelMesh.transform.Rotate(wheelRPMAngle, 0f, 0f);
         }
         else
         {
-            wheelMesh.transform.Rotate(-mainBody.velocity.magnitude / wheelRadius, 0f, 0f);
+            wheelRPMAngle = Mathf.Lerp(wheelRPMAngle, -mainBody.velocity.magnitude / wheelRadius,
+                Time.deltaTime * acceleration);
+            wheelMesh.transform.Rotate(wheelRPMAngle, 0f, 0f);
         }
     }
 }
