@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using NaughtyAttributes;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
 public class ForkliftController : MonoBehaviour
@@ -49,7 +44,7 @@ public class ForkliftController : MonoBehaviour
         {
             isObjectOnFork = Physics.Raycast(middleOfFork.position, Vector3.up, out RaycastHit hit,
                 objectUpDetectionRayLength);
-            
+
             if (isObjectOnFork)
             {
                 if (item != null && itemRigidbody != null)

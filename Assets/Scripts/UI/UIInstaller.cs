@@ -5,6 +5,7 @@ using Zenject;
 public class UIInstaller : ScriptableObjectInstaller<UIInstaller>
 {
     [SerializeField] private ForkliftUIController forkliftUIController;
+
     public override void InstallBindings()
     {
         Container.Bind<ForkliftUIController>().FromInstance(forkliftUIController).AsSingle();
