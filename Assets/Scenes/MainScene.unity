@@ -1172,6 +1172,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 731801658567534323, guid: a4db35aee5557ea4795ccca09a1bedc6,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 731801658567534323, guid: a4db35aee5557ea4795ccca09a1bedc6,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -3125,7 +3130,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813098686}
-  m_LocalRotation: {x: -0.17242222, y: 0.80918896, z: -0.29008254, w: -0.48097393}
+  m_LocalRotation: {x: -0.17190552, y: 0.8095001, z: -0.28921327, w: -0.48115885}
   m_LocalPosition: {x: 24.43, y: 23.08, z: 13.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5985,7 +5990,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577760937}
-  m_LocalRotation: {x: -0.17242222, y: 0.80918896, z: -0.29008254, w: -0.48097393}
+  m_LocalRotation: {x: -0.17190552, y: 0.8095001, z: -0.28921327, w: -0.48115885}
   m_LocalPosition: {x: 24.43, y: 23.08, z: 13.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8231,13 +8236,18 @@ PrefabInstance:
     - target: {fileID: 144523686590551969, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: restDistance
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 144523686590551969, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: springTravel
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 144523686590551969, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: springDamping
+      value: 70000
+      objectReference: {fileID: 0}
     - target: {fileID: 165276131563820925, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: wheelRadius
@@ -8246,12 +8256,17 @@ PrefabInstance:
     - target: {fileID: 165276131563820925, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: restDistance
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 165276131563820925, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: springTravel
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 165276131563820925, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: springDamping
+      value: 70000
       objectReference: {fileID: 0}
     - target: {fileID: 394567452953830180, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
@@ -8261,12 +8276,17 @@ PrefabInstance:
     - target: {fileID: 394567452953830180, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: restDistance
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 394567452953830180, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: springTravel
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 394567452953830180, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: springDamping
+      value: 70000
       objectReference: {fileID: 0}
     - target: {fileID: 2138356837294768738, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
@@ -8276,12 +8296,27 @@ PrefabInstance:
     - target: {fileID: 2138356837294768738, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: restDistance
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2138356837294768738, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: springTravel
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138356837294768738, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: springDamping
+      value: 70000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4377350914972258087, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133950458861653772, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8323354036767388677, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
@@ -8296,7 +8331,7 @@ PrefabInstance:
     - target: {fileID: 8323354036767388677, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8323354036767388677, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
@@ -8342,6 +8377,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Forklift
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499838879516006851, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976599066089292314, guid: 07c736aeab7eae34f9eaa7e76376da33,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07c736aeab7eae34f9eaa7e76376da33, type: 3}

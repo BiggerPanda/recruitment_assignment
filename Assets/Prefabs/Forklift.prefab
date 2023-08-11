@@ -623,7 +623,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2326226478175800707}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.835498, y: 2, z: 2.9114723}
+  m_LocalPosition: {x: -2.835498, y: 1.8, z: 2.9114723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -644,10 +644,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restDistance: 1
-  springTravel: 0.4
+  springTravel: 0.3
   springStiffness: 120000
-  springDamping: 60000
-  wheelRadius: 1.1
+  springDamping: 70000
+  wheelRadius: 1
   isLeftWheel: 1
   steerTime: 6
 --- !u!1 &2711930526247060015
@@ -758,7 +758,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2802689164507307384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.18413, y: 2, z: -3.1025171}
+  m_LocalPosition: {x: 2.18413, y: 1.8, z: -3.1025171}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -779,10 +779,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restDistance: 1
-  springTravel: 0.4
+  springTravel: 0.3
   springStiffness: 120000
-  springDamping: 60000
-  wheelRadius: 1.1
+  springDamping: 70000
+  wheelRadius: 1
   isLeftWheel: 0
   steerTime: 6
 --- !u!1 &3020342085340593061
@@ -1486,7 +1486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7964170042170300992}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.835498, y: 2, z: 2.9114723}
+  m_LocalPosition: {x: 2.835498, y: 1.8, z: 2.9114723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1507,10 +1507,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restDistance: 1
-  springTravel: 0.4
+  springTravel: 0.3
   springStiffness: 120000
-  springDamping: 60000
-  wheelRadius: 1.1
+  springDamping: 70000
+  wheelRadius: 1
   isLeftWheel: 0
   steerTime: 6
 --- !u!1 &8323354036534750772
@@ -1799,7 +1799,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8888526388649580317}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.1841302, y: 2, z: -3.1025171}
+  m_LocalPosition: {x: -2.1841302, y: 1.8, z: -3.1025171}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1820,10 +1820,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restDistance: 1
-  springTravel: 0.4
+  springTravel: 0.3
   springStiffness: 120000
-  springDamping: 60000
-  wheelRadius: 1.1
+  springDamping: 70000
+  wheelRadius: 1
   isLeftWheel: 1
   steerTime: 6
 --- !u!1 &9108355191310071562
