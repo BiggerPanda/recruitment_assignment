@@ -291,7 +291,13 @@
         {
             "name": "Xbox",
             "bindingGroup": "Xbox",
-            "devices": []
+            "devices": [
+                {
+                    "devicePath": "<XInputController>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
         }
     ]
 }

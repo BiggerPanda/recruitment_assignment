@@ -7,7 +7,8 @@ public class InputController : MonoBehaviour
     public static InputController Instance;
     
     private ForkliftInputMap inputMap;
-    
+    public bool IsGamepadConnected { get; set; }
+
     private void Awake()
     {
         Instance = this;
