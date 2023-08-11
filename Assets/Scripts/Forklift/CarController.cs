@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -46,7 +43,7 @@ public class CarController : MonoBehaviour
     {
         forkliftUIController = _forkliftUIController;
     }
-    
+
     private void Awake()
     {
         mainBody = GetComponent<ArticulationBody>();

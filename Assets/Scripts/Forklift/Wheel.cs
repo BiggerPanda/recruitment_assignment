@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -36,7 +33,7 @@ public class Wheel : MonoBehaviour
     private float forwardForce = 0f;
     private float sidewaysForce = 0f;
     private float wheelCircumference = 0f;
-    private float wheelRPMAngle = 0f;
+    private float wheelRpmAngle = 0f;
 
     private ArticulationBody mainBody;
     private GameObject wheelMesh;
@@ -110,15 +107,15 @@ public class Wheel : MonoBehaviour
     {
         if (InputController.Instance.GetMoveVector().y >= 0)
         {
-            wheelRPMAngle = Mathf.Lerp(wheelRPMAngle, mainBody.velocity.magnitude / wheelRadius,
+            wheelRpmAngle = Mathf.Lerp(wheelRpmAngle, mainBody.velocity.magnitude / wheelRadius,
                 Time.deltaTime * acceleration);
-            wheelMesh.transform.Rotate(wheelRPMAngle, 0f, 0f);
+            wheelMesh.transform.Rotate(wheelRpmAngle, 0f, 0f);
         }
         else
         {
-            wheelRPMAngle = Mathf.Lerp(wheelRPMAngle, -mainBody.velocity.magnitude / wheelRadius,
+            wheelRpmAngle = Mathf.Lerp(wheelRpmAngle, -mainBody.velocity.magnitude / wheelRadius,
                 Time.deltaTime * acceleration);
-            wheelMesh.transform.Rotate(wheelRPMAngle, 0f, 0f);
+            wheelMesh.transform.Rotate(wheelRpmAngle, 0f, 0f);
         }
     }
 }

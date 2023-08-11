@@ -1,13 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using Cinemachine;
 using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.UI;
+
 
 public enum CameraType
 {
@@ -15,6 +10,7 @@ public enum CameraType
     FirstPerson,
     SideView
 }
+
 public class CameraUIChanger : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera[] cinemachineVirtualCameras;
@@ -28,10 +24,10 @@ public class CameraUIChanger : MonoBehaviour
         {
             _t.VirtualCameraGameObject.SetActive(false);
         }
-        
+
         activeCinemachineVirtualCamera = cinemachineVirtualCameras[0];
         activeCinemachineVirtualCamera.VirtualCameraGameObject.SetActive(true);
-        
+
         dropdown = GetComponent<TMP_Dropdown>();
         dropdown.onValueChanged.AddListener(delegate { ChangeCamera(dropdown.value); });
     }
@@ -51,8 +47,8 @@ public class CameraUIChanger : MonoBehaviour
                 break;
         }
     }
-    
-    private void SwitchCamera( int _value)
+
+    private void SwitchCamera(int _value)
     {
         activeCinemachineVirtualCamera.VirtualCameraGameObject.SetActive(false);
         activeCinemachineVirtualCamera = cinemachineVirtualCameras[_value];
