@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Zenject;
 
 public class ForkliftController : MonoBehaviour
 {
@@ -22,6 +23,14 @@ public class ForkliftController : MonoBehaviour
     private Transform item;
     private Rigidbody itemRigidbody;
     private float movePosition = 0f;
+    private bool isObjectOnFork;
+    private ForkliftUIController forkliftUIController;
+
+    [Inject]
+    private void Init(ForkliftUIController _forkliftUIController)
+    {
+        forkliftUIController = _forkliftUIController;
+    }
 
     private void Start()
     {
@@ -38,7 +47,10 @@ public class ForkliftController : MonoBehaviour
     {
         if (InputController.Instance.MoveForkliftUp())
         {
-            if (Physics.Raycast(middleOfFork.position, Vector3.up, out RaycastHit hit, objectUpDetectionRayLength))
+            isObjectOnFork = Physics.Raycast(middleOfFork.position, Vector3.up, out RaycastHit hit,
+                objectUpDetectionRayLength);
+            
+            if (isObjectOnFork)
             {
                 if (item != null && itemRigidbody != null)
                 {
@@ -68,6 +80,7 @@ public class ForkliftController : MonoBehaviour
                     item.SetParent(null);
                     item = null;
                     itemRigidbody = null;
+                    isObjectOnFork = false;
                 }
             }
 
@@ -78,6 +91,8 @@ public class ForkliftController : MonoBehaviour
                 connectedForkBody.yDrive = yDrive;
             }
         }
+
+        forkliftUIController.UpdateForkliftData(movePosition, isObjectOnFork);
     }
 
     private void FixedUpdate()
